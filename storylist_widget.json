@@ -32,9 +32,7 @@
   "methods": {
     "refresh": {
       "description": "Listeyi yeniden yükler.",
-      "body": []
+      "body": ""
     }
-  },
-  "events": {},
-  "dataBindings": {}
+  }
 }
