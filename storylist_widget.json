@@ -6,20 +6,20 @@
     "vendor": "Custom",
     "license": "",
     "id": "com.custom.storylist",
-    "version": "3.0.0",
+    "version": "3.0.1",
     "icon": "",
     "webcomponents": [
         {
             "kind": "main",
             "tag": "custom-story-list",
-            "url": "https://bizimniyan.github.io/liststory/main.js",
+            "url": "https://bizimniyan.github.io/liststory/main.js?v=300",
             "integrity": "",
             "ignoreIntegrity": true
         },
         {
             "kind": "builder",
             "tag": "custom-story-list-builder",
-            "url": "https://bizimniyan.github.io/liststory/builder.js",
+            "url": "https://bizimniyan.github.io/liststory/builder.js?v=300",
             "integrity": "",
             "ignoreIntegrity": true
         }
