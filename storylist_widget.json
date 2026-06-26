@@ -6,35 +6,40 @@
     "vendor": "Custom",
     "license": "",
     "id": "com.custom.storylist",
-    "version": "1.0.0",
+    "version": "2.0.0",
     "icon": "",
     "webcomponents": [
         {
             "kind": "main",
             "tag": "custom-story-list",
-            "url": "https://bizimniyan.github.io/liststory/storylist_widget.js",
+            "url": "https://bizimniyan.github.io/liststory/main.js",
             "integrity": "",
             "ignoreIntegrity": true
         },
         {
             "kind": "builder",
             "tag": "custom-story-list-builder",
-            "url": "https://bizimniyan.github.io/liststory/storylist_widget.js",
+            "url": "https://bizimniyan.github.io/liststory/builder.js",
             "integrity": "",
             "ignoreIntegrity": true
         }
     ],
     "properties": {
-        "repositoryUrl": {
-            "type": "string",
-            "default": "https://dksac.eu10.analytics.cloud.sap/api/v1/filerepository/Resources?$filter=parentFolderResourceId%20eq%20%27034E0D52E49642EF8AEC9C9EB40DD7F4%27"
-        },
         "title": {
             "type": "string",
             "default": "Story'ler"
+        },
+        "repositoryUrl": {
+            "type": "string",
+            "default": "https://dksac.eu10.analytics.cloud.sap/api/v1/filerepository/Resources?$filter=parentFolderResourceId%20eq%20%27034E0D52E49642EF8AEC9C9EB40DD7F4%27"
         }
     },
-    "methods": {},
-    "events": {},
-    "dataBindings": {}
+    "methods": {
+        "refresh": {
+            "description": "Listeyi yeniden yukler",
+            "parameters": [],
+            "body": "this.refresh();"
+        }
+    },
+    "events": {}
 }
