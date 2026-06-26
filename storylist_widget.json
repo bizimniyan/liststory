@@ -1,0 +1,40 @@
+{
+  "name": "Story List",
+  "description": "Bir klasördeki SAC story'lerini listeler ve tıklanabilir link olarak gösterir.",
+  "eula": "",
+  "vendor": "Dalgakiran",
+  "license": "",
+  "id": "com.dalgakiran.storylist",
+  "version": "1.0.0",
+  "newInstancePrefix": "StoryList",
+  "icon": "",
+  "webcomponents": [
+    {
+      "kind": "main",
+      "tag": "com-dalgakiran-storylist",
+      "url": "https://YOUR_HOST/storylist_widget.js",
+      "integrity": "",
+      "ignoreIntegrity": true
+    }
+  ],
+  "properties": {
+    "repositoryUrl": {
+      "type": "string",
+      "description": "File Repository API URL (klasör filtreli)",
+      "default": "https://dksac.eu10.analytics.cloud.sap/api/v1/filerepository/Resources?$filter=parentFolderResourceId%20eq%20%27034E0D52E49642EF8AEC9C9EB40DD7F4%27"
+    },
+    "title": {
+      "type": "string",
+      "description": "Başlık",
+      "default": "Story'ler"
+    }
+  },
+  "methods": {
+    "refresh": {
+      "description": "Listeyi yeniden yükler.",
+      "body": {}
+    }
+  },
+  "events": {},
+  "dataBindings": {}
+}
