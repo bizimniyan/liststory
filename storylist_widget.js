@@ -120,4 +120,60 @@
     }
 
     customElements.define("custom-story-list", StoryList);
+
+    // ============ BUILDER PANEL (sag panel parametreleri) ============
+    let builderTemplate = document.createElement("template");
+    builderTemplate.innerHTML = `
+        <style>
+            #form { font-family: "72", Arial, sans-serif; font-size: 13px; padding: 8px; }
+            .row { margin-bottom: 12px; display: flex; flex-direction: column; }
+            label { margin-bottom: 4px; color: #333; font-weight: 600; }
+            input { padding: 6px 8px; border: 1px solid #bbb; border-radius: 4px; font-size: 13px; box-sizing: border-box; width: 100%; }
+            textarea { padding: 6px 8px; border: 1px solid #bbb; border-radius: 4px; font-size: 12px; min-height: 90px; resize: vertical; box-sizing: border-box; width: 100%; }
+            button { margin-top: 4px; padding: 6px 14px; background: #0a6ed1; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: 13px; }
+            button:hover { background: #085caf; }
+        </style>
+        <form id="form">
+            <div class="row">
+                <label for="title">Başlık</label>
+                <input id="title" type="text" />
+            </div>
+            <div class="row">
+                <label for="repositoryUrl">File Repository API URL</label>
+                <textarea id="repositoryUrl" placeholder="https://.../api/v1/filerepository/Resources?$filter=..."></textarea>
+            </div>
+            <button type="submit">Uygula</button>
+        </form>
+    `;
+
+    class StoryListBuilder extends HTMLElement {
+        constructor() {
+            super();
+            this._shadowRoot = this.attachShadow({ mode: "open" });
+            this._shadowRoot.appendChild(builderTemplate.content.cloneNode(true));
+            this._form = this._shadowRoot.getElementById("form");
+            this._title = this._shadowRoot.getElementById("title");
+            this._url = this._shadowRoot.getElementById("repositoryUrl");
+            this._form.addEventListener("submit", this._submit.bind(this));
+        }
+
+        _submit(e) {
+            e.preventDefault();
+            this.dispatchEvent(new CustomEvent("propertiesChanged", {
+                detail: {
+                    properties: {
+                        title: this.title,
+                        repositoryUrl: this.repositoryUrl
+                    }
+                }
+            }));
+        }
+
+        set title(v) { this._title.value = v != null ? v : ""; }
+        get title() { return this._title.value; }
+        set repositoryUrl(v) { this._url.value = v != null ? v : ""; }
+        get repositoryUrl() { return this._url.value; }
+    }
+
+    customElements.define("custom-story-list-builder", StoryListBuilder);
 })();
