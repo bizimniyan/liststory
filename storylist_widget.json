@@ -6,7 +6,7 @@
     "vendor": "Custom",
     "license": "",
     "id": "com.custom.storylist",
-    "version": "2.0.0",
+    "version": "3.0.0",
     "icon": "",
     "webcomponents": [
         {
@@ -25,14 +25,23 @@
         }
     ],
     "properties": {
-        "title": {
-            "type": "string",
-            "default": "Story'ler"
-        },
-        "repositoryUrl": {
-            "type": "string",
-            "default": "https://dksac.eu10.analytics.cloud.sap/api/v1/filerepository/Resources?$filter=parentFolderResourceId%20eq%20%27034E0D52E49642EF8AEC9C9EB40DD7F4%27"
-        }
+        "title": { "type": "string", "default": "Story'ler" },
+        "repositoryUrl": { "type": "string", "default": "https://dksac.eu10.analytics.cloud.sap/api/v1/filerepository/Resources?$filter=parentFolderResourceId%20eq%20%27034E0D52E49642EF8AEC9C9EB40DD7F4%27" },
+        "sortBy": { "type": "string", "default": "none" },
+        "textColor": { "type": "string", "default": "#0a6ed1" },
+        "fontSize": { "type": "integer", "default": 14 },
+        "fontWeight": { "type": "string", "default": "normal" },
+        "underline": { "type": "boolean", "default": false },
+        "titleColor": { "type": "string", "default": "#1a1a1a" },
+        "titleSize": { "type": "integer", "default": 16 },
+        "transparentBg": { "type": "boolean", "default": false },
+        "backgroundColor": { "type": "string", "default": "#ffffff" },
+        "hoverColor": { "type": "string", "default": "#f5f7fa" },
+        "rowPadding": { "type": "integer", "default": 8 },
+        "showBorders": { "type": "boolean", "default": true },
+        "showMeta": { "type": "boolean", "default": true },
+        "showSearch": { "type": "boolean", "default": false },
+        "openInNewTab": { "type": "boolean", "default": true }
     },
     "methods": {
         "refresh": {
